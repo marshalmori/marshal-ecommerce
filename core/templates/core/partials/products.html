@@ -13,13 +13,14 @@
         </form>
 
         <h3 class="mt-6 mb-3 text-xl uppercase">Categories</h3>
-        <ul class="space-y-2">
-            <li><a href="#" class="text-purple-500">All categories</a></li>
-            <li><a href="#" class="text-gray-500">Sofa</a></li>
-            <li><a href="#" class="text-gray-500">Beds</a></li>
-            <li><a href="#" class="text-gray-500">Tables</a></li>
-            
-        </ul>
+        
+            <ul class="space-y-2">
+                <li><a href="#" class="text-purple-500 hover:text-purple-800">All categories</a></li>
+                {% for category in categories %}
+                    <li><a href="#" class="text-gray-700 hover:text-purple-800">{{ category.name }}</a></li>
+                {% endfor %}
+            </ul>
+       
     </div>
 
     <div class="products w-full lg:w-3/4 -mt-4 flex items-center flex-wrap">
