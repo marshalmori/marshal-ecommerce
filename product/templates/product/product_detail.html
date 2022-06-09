@@ -4,29 +4,30 @@
 
 {% block content %}
 
-<div class="max-w-6xl mx-auto flex flex-wrap py-6 px-6 xl:px-0">
-    <div class="images w-full mb-6 lg:mb-0 lg:w-3/5">
-        <img src="https://images.pexels.com/photos/276534/pexels-photo-276534.jpeg?cs=srgb&dl=pexels-pixabay-276534.jpg&fm=jpg" alt="Chair" class="rounded-xl">
+    {% if product_detail %}
+    <div class="max-w-6xl mx-auto flex flex-wrap py-6 px-6 xl:px-0">
+        <div class="images w-full mb-6 lg:mb-0 lg:w-3/5">
+            <img src="https://images.pexels.com/photos/276534/pexels-photo-276534.jpeg?cs=srgb&dl=pexels-pixabay-276534.jpg&fm=jpg" alt="Chair" class="rounded-xl">
+        </div>
+    
+        <div class="information w-full lg:w-2/5 lg:p-6">
+            <h1 class="text-2xl">{{ product_detail.name }}</h1>
+    
+            <p class="mt-1 text-gray-400">R$ {{ product_detail.price }}</p>
+    
+            <p class="mt-6 text-gray-700">
+                {{ product_detail.description }}
+            </p>
+            
+            <a 
+                href="" 
+                class="mt-6 inline-block px-8 py-4 rounded-xl 
+                bg-purple-500 text-white hover:bg-purple-700">
+                Add to cart
+            </a>
+        </div>
     </div>
+    {% endif %}
 
-    <div class="information w-full lg:w-2/5 lg:p-6">
-        <h1 class="text-2xl">Product Name</h1>
 
-        <p class="mt-1 text-gray-400">R$ 9.99</p>
-
-        <p class="mt-6 text-gray-700">
-            Lorem, ipsum dolor sit amet consectetur adipisicing elit. 
-            Ea laudantium aut expedita quis necessitatibus sequi odit 
-            ducimus excepturi dolores nostrum reiciendis dolorum consequatur, 
-            nisi eligendi, nam ipsa dolorem quos molestias!
-        </p>
-        
-        <a 
-            href="" 
-            class="mt-6 inline-block px-8 py-4 rounded-xl 
-            bg-purple-500 text-white hover:bg-purple-700">
-            Add to cart
-        </a>
-    </div>
-</div>
 {% endblock content %}
