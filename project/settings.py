@@ -27,6 +27,8 @@ DEBUG = True if os.environ.get('DEBUG') == '1' else False
 
 ALLOWED_HOSTS: list[str] = []
 
+SESSION_COOKIE_AGE = 86400
+CART_SESSION_ID = 'cart'
 
 # Application definition
 
@@ -39,6 +41,7 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'core',
     'product',
+    'cart',
 ]
 
 MIDDLEWARE = [
