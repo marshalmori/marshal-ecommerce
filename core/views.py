@@ -26,6 +26,10 @@ def create_prod_cat(request):
     }
 
 
+def signup(request):
+    return render(request, 'core/pages/signup.html')
+
+
 def home(request):
     return render(request, 'core/pages/home.html', create_prod_cat(request))
 
