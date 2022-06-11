@@ -30,6 +30,10 @@ def signup(request):
     return render(request, 'core/pages/signup.html')
 
 
+def login(request):
+    return render(request, 'core/pages/login.html')
+
+
 def home(request):
     return render(request, 'core/pages/home.html', create_prod_cat(request))
 
