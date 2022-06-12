@@ -6,9 +6,16 @@
 
     {% if product_detail %}
     <div class="max-w-6xl mx-auto flex flex-wrap py-6 px-6 xl:px-0">
+        {% if product_detail.image %}
+            <div class="images w-full mb-6 lg:mb-0 lg:w-3/5">
+                <img src="{{ product_detail.image.url }}" alt="{{ product_detail.image.name }}" class="rounded-xl">
+            </div>
+        {% else %}
         <div class="images w-full mb-6 lg:mb-0 lg:w-3/5">
-            <img src="https://images.pexels.com/photos/276534/pexels-photo-276534.jpeg?cs=srgb&dl=pexels-pixabay-276534.jpg&fm=jpg" alt="Chair" class="rounded-xl">
+            <img src="https://via.placeholder.com/600x400.jpg" alt="{{ product_detail.image.name }}" class="rounded-xl">
         </div>
+        
+        {% endif %}
     
         <div class="information w-full lg:w-2/5 lg:p-6">
             <h1 class="text-2xl">{{ product_detail.name }}</h1>
