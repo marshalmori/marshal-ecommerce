@@ -28,6 +28,7 @@ DEBUG = True if os.environ.get('DEBUG') == '1' else False
 ALLOWED_HOSTS: list[str] = []
 
 LOGOUT_REDIRECT_URL = '/'
+LOGIN_REDIRECT_URL = '/'
 
 SESSION_COOKIE_AGE = 86400
 CART_SESSION_ID = 'cart'
