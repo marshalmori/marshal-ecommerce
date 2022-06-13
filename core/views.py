@@ -1,6 +1,9 @@
+from django.contrib.auth import login
 from django.db.models import Q
-from django.shortcuts import render
+from django.shortcuts import redirect, render
 from product.models import Category, Product
+
+from .forms import SignUpForm
 
 
 def create_prod_cat(request):
@@ -27,10 +30,22 @@ def create_prod_cat(request):
 
 
 def signup(request):
-    return render(request, 'core/pages/signup.html')
+    if request.method == 'POST':
+        form = SignUpForm(request.POST)
+
+        if form.is_valid():
+            user = form.save()
+
+            login(request, user)
+
+            return redirect('/')
+    else:
+        form = SignUpForm()
+
+    return render(request, 'core/pages/signup.html', {'form': form})
 
 
-def login(request):
+def login_(request):
     return render(request, 'core/pages/login.html')
 
 
