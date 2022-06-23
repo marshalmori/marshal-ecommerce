@@ -10,9 +10,9 @@
         <strong>Name: </strong>{{ request.user.get_full_name }}<br>
         <strong>Username: </strong>{{ request.user.username }}<br>
         <strong>E-mail: </strong>{{ request.user.email }}<br>
-        <div class="mb-6 mt-6">
-            <a class="pl-10 pr-10 pt-3 pb-3 bg-purple-500 rounded-xl hover:bg-purple-700 text-white font-semibold" href="{% url 'edit_myaccount' %}">Edit</a>
-        </div>
+        
+        <a class=" inline-block mt-5 pl-10 pr-10 pt-3 pb-3 bg-purple-500 rounded-xl hover:bg-purple-700 text-white font-semibold" href="{% url 'edit_myaccount' %}">Edit</a>
+      
     </div>
     
     <hr style="border-color:#A855F7;">
