@@ -1,4 +1,4 @@
-<div class="product mb-6 flex pr-6">
+<div class="product mb-6 flex pr-6" id="cart-item-{{ item.product.id }}">
     <a href="#" class="w-1/4">
         <img 
             src="{{ item.product.get_thumbnail }}" 
@@ -15,9 +15,24 @@
         <hr>
 
         <div class="quantity mt-6 flex items-center space-x-4">
-            <a href="#" class="p-3 bg-purple-500 rounded-xl hover:bg-purple-700 text-white font-semibold">-</a>
+            <a 
+                class="p-3 bg-purple-500 rounded-xl hover:bg-purple-700 text-white font-semibold"
+                hx-get="{% url 'update_cart' item.product.id 'decrement' %}"
+                hx-target="#cart-item-{{ item.product.id }}"
+                hx-swap="outerHTML"
+            >
+             -
+            </a>
+
             <span>{{ item.quantity }}</span>
-            <a href="#" class="p-3 bg-purple-500 rounded-xl hover:bg-purple-700 text-white font-semibold">+</a>
+            <a 
+            class="p-3 bg-purple-500 rounded-xl hover:bg-purple-700 text-white font-semibold"
+            hx-get="{% url 'update_cart' item.product.id 'increment' %}"
+            hx-target="#cart-item-{{ item.product.id }}"
+            hx-swap="outerHTML"
+        >
+         +
+        </a>
         </div>
 
     </div>
