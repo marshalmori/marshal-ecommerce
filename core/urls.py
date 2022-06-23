@@ -11,5 +11,6 @@ urlpatterns = [
     path('login/', LoginView.as_view(
         template_name='core/pages/login.html'),
         name='login'),
+    path('myaccount/', views.myaccount, name='myaccount'),
     path('logout/', LogoutView.as_view(), name='logout'),
 ]

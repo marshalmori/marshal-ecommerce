@@ -1,4 +1,5 @@
 from django.contrib.auth import login
+from django.contrib.auth.decorators import login_required
 from django.db.models import Q
 from django.shortcuts import redirect, render
 from product.models import Category, Product
@@ -45,8 +46,12 @@ def signup(request):
     return render(request, 'core/pages/signup.html', {'form': form})
 
 
-def login_(request):
-    return render(request, 'core/pages/login.html')
+@login_required
+def myaccount(request):
+    return render(request, 'core/pages/myaccount.html')
+
+# def login_(request):
+#     return render(request, 'core/pages/login.html')
 
 
 def home(request):
