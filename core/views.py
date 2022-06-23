@@ -50,6 +50,11 @@ def signup(request):
 def myaccount(request):
     return render(request, 'core/pages/myaccount.html')
 
+
+@login_required
+def edit_myaccount(request):
+    return render(request, 'core/pages/edit_myaccount.html')
+
 # def login_(request):
 #     return render(request, 'core/pages/login.html')
 
